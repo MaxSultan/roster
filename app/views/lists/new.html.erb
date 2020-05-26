@@ -1,0 +1,23 @@
+
+<div class="center">
+    <div class="container">
+        <h1>Create a New Roster</h1>
+        <h2>Roster</h2>
+        <%= form_with(model: @list, local: true, class: "form") do |f| %>
+            <div class='input-field'>
+            <i class="material-icons prefix">list</i>
+                <%= f.label :name %>
+                <%= f.text_field :name, required: true %>
+            </div>
+        <br />
+            <div class='input-field'>
+            <i class="material-icons prefix">event</i>
+                <%= f.label :year %>
+                <%= f.text_field :year, required: true %>
+            </div>
+        <br />
+        <br />
+        <%= f.submit 'Add Roster', class: "btn-large red darken-5" %>
+        <% end %>
+    </div>
+</div>
