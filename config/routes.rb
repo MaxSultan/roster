@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'athletes/index'
+resources :lists 
+
 root 'lists#index'
+
  resources :lists do
   resources :weights
  end 

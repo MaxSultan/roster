@@ -1,4 +1,4 @@
 class Weight < ApplicationRecord
   belongs_to :list
-  has_many :athletes
+  belongs_to :athlete
 end

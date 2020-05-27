@@ -2,10 +2,10 @@
     <div class="container">
         <h1>Rosters</h1>
 
-        <% @lists.each do |roster|%>
-        <%= link_to roster.name, weight_athletes_path(Athlete.first.weight_id)%>
-        <%= link_to 'Edit Roster', edit_list_path(roster),class:'btn-floating red darken-4'%>
-        <%= link_to 'Delete Roster', list_path(roster),method: :delete, class:'btn-floating red darken-4'%>
+        <% @lists.each do |list|%>
+        <%= link_to list.name                %>
+        <%= link_to 'Edit Roster', edit_list_path(list),class:'btn-floating red darken-4'%>
+        <%= link_to 'Delete Roster', list_path(list),method: :delete, class:'btn-floating red darken-4'%>
         <br/>
         <% end %>
         <%= link_to 'Add New Roster', new_list_path%>

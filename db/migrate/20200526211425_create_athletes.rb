@@ -6,6 +6,7 @@ class CreateAthletes < ActiveRecord::Migration[6.0]
       t.string :win_loss
       t.boolean :injured
       t.string :phone
+      t.integer :rank 
       t.belongs_to :weight, null: false, foreign_key: true
 
       t.timestamps

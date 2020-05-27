@@ -1,3 +1,4 @@
 class Athlete < ApplicationRecord
-  belongs_to :weight
+  has_one :weight
+  has_one :list, through: :weight
 end
