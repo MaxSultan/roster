@@ -1,0 +1,23 @@
+<div class="center">
+    <div class="container">
+        <h1><%=  @list.name   %></h1>
+
+        <h3> <%= @list.year %> </h3>
+        
+        <% @weights.each do |weight|%>
+        <div class="card small">
+        <div style="display:flex; flex-direction: column; flex-wrap: wrap; max-height: 99vh; justify-content: space-between">
+        <%= weight.weight_class%>
+            <% @athletes.each do |athlete| %>
+            <%= link_to athlete.name, weight_athlete_path(athlete.weight_id, athlete) %>
+            <% end %>
+            </div>
+            <br/>
+        <% end %>
+        
+        </div>
+        <%# weights and the athlete index for each weight %>
+        <br/>
+        <%= link_to 'Back to All Rosters', root_path, class:'btn-large yellow darken-2'%>
+    </div>
+</div>

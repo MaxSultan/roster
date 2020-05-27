@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_26_191958) do
+ActiveRecord::Schema.define(version: 2020_05_26_211425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "athletes", force: :cascade do |t|
+    t.string "name"
+    t.string "grade"
+    t.string "win_loss"
+    t.boolean "injured"
+    t.string "phone"
+    t.bigint "weight_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["weight_id"], name: "index_athletes_on_weight_id"
+  end
 
   create_table "lists", force: :cascade do |t|
     t.string "name"
@@ -23,12 +35,13 @@ ActiveRecord::Schema.define(version: 2020_05_26_191958) do
   end
 
   create_table "weights", force: :cascade do |t|
-    t.string "class"
+    t.string "weight_class"
     t.bigint "list_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["list_id"], name: "index_weights_on_list_id"
   end
 
+  add_foreign_key "athletes", "weights"
   add_foreign_key "weights", "lists"
 end

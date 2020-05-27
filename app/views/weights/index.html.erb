@@ -5,10 +5,13 @@
         <h3> <%= @list.year %> </h3>
 
         <% @weights.each do |weight|%>
-        <% weight.class%>
+        <%= weight.weight_class%>
+        <%= link_to 'Athletes' ,weight_athletes_path(weight), class:'btn-small yellow darken-2'%>
         <% end %>
         <%# weights and the athlete index for each weight %>
-
+        <br/>
+        
+        <br/>
         <%= link_to 'Back to All Rosters', root_path, class:'btn-large yellow darken-2'%>
     </div>
 </div>
