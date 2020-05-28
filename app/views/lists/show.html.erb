@@ -4,6 +4,18 @@
 
         <h3> <%= @list.year %> </h3>
 
+
+
+        <%= link_to 'add weight to roster', new_list_weight_path(@list) %>
+
+        <% if @weights = [] %>
+        <h4>No weights added to roster</h4>
+        <%else %>
+        <% @weights. each do |weight|%>
+        <%= weight.name %>
+        <% end %>
+        <% end %>
+
         <%# weights and the athlete index for each weight %>
 
         <%= link_to 'Back to All Rosters', root_path, class:'btn-large yellow darken-2'%>

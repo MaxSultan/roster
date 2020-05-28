@@ -3,9 +3,11 @@ class ListsController < ApplicationController
 
   def index
     @lists = List.all
+    
   end
 
   def show
+    @weights = @list.weights.all
   end
 
   def new

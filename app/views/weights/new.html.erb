@@ -1,0 +1,11 @@
+
+<div class="center">
+    <div class='container'>
+        <h1>Add New Weight</h1>
+
+        <%= form_with model:@weight, class:'form' do |f| %>
+        <%= f.select, :name, @hs.collect {|weight| weight} %>
+        <%= f.submit 'Add Weight', class:'btn-large'%>
+        <% end %>
+        </div>
+    </div>
